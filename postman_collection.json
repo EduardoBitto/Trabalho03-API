@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_postman_id": "1ec6d08d-5f62-4e14-b585-8b03a269a818",
+    "name": "🎮 Games API",
+    "description": "Collection para testar o CRUD de Jogos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53281581",
+    "_collection_link": "https://go.postman.co/collection/53281581-1ec6d08d-5f62-4e14-b585-8b03a269a818?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Listar Jogos (Filtros e Paginação)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/jogos?genero=RPG&ordem=desc&limite=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "jogos"
+          ],
+          "query": [
+            {
+              "key": "genero",
+              "value": "RPG"
+            },
+            {
+              "key": "ordem",
+              "value": "desc"
+            },
+            {
+              "key": "limite",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Buscar Jogo por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/jogos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "jogos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Adicionar Jogo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Ghost of Tsushima\",\n  \"desenvolvedora\": \"Sucker Punch\",\n  \"ano\": 2020,\n  \"genero\": \"Ação\",\n  \"nota\": 9.5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:80/jogos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "jogos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Atualizar Jogo",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Elden Ring: Shadow of the Erdtree\",\n  \"desenvolvedora\": \"FromSoftware\",\n  \"ano\": 2024,\n  \"genero\": \"RPG\",\n  \"nota\": 9.9\n}"
+        },
+        "url": {
+          "raw": "http://localhost:80/jogos/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "jogos",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Remover Jogo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/jogos/20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "jogos",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
